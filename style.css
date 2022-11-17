@@ -1,28 +1,40 @@
+*{
+    font-size: 1.1rem;
+    font-family: garamond;
+}
+
 body {
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(138, 136, 136);
+    background-image: url(./images/vault.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: black;
 }
 
 .container {
-    background-color: rgb(22, 31, 34);
+    background-color: rgb(138, 136, 136);
     color: white;
-    width: 80vw;
-    height: 90vh;
+    width: 62vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 5rem;
     padding: 1rem;
-    border-radius: 0.8rem;
+    border-radius: 0.4rem;
+    border-left: 0.5rem solid black;
+    border-right: 0.5rem solid black;
     align-items: center;
     justify-content: space-around;
 }
 
+
+
 .button-style {
-    background-color: rgba(0, 0, 0, 0.664);
+    background-color: rgb(22, 31, 34);
     border-radius: 0.5rem;
     color: white;
     padding: 1rem;
@@ -31,4 +43,20 @@ body {
 .button-style:hover {
     background-color: rgba(48, 48, 45, 0.514);
     cursor: pointer;
+}
+
+.text-style{
+    text-align: center;
+    background-color: rgb(22, 31, 34);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.image{
+    background-image: url(./images/hooded-character.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 40%;
+    width: 15vw;
+    height: 20vh;
 }
