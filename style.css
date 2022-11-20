@@ -31,7 +31,7 @@ body {
 
 
 
-.button1-style {
+.button-style {
     background-color: rgb(22, 31, 34);
     border: rgb(22, 31, 34);
     border-radius: 0.5rem;
@@ -39,12 +39,12 @@ body {
     padding: 1rem;
 }
 
-.button1-style:hover {
+.button-style:hover {
     background-color: rgba(48, 48, 45, 0.514);
     cursor: pointer;
 }
 
-.text-style{
+.text-style {
     text-align: center;
     background-color: rgb(22, 31, 34);
     width: 50%;
@@ -55,7 +55,11 @@ body {
     padding-right: 3rem;
 }
 
-.imageSecondScene{
+.text-style-end {
+    font-size: 6rem;
+}
+
+.imgHoodedStranger {
     content: url(./images/hooded-character.jpg);
     border-radius: 1rem;
     flex: 0.6;
