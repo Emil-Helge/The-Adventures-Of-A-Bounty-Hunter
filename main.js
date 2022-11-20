@@ -1,8 +1,10 @@
 window.addEventListener("DOMContentLoaded", main);
 
 let username = "";
+let bountyLetter = false;
 
 function main() {
+    inventory = {}
     loadIntroductionScene();
 }
 
@@ -65,8 +67,8 @@ function loadHoodedStrangerEntranceScene() {
 
     speakerName.textContent = "Hooded stranger"
     p.textContent = "Well met prisoner, I have heard about your sentencing and how you deem it to be unjust."+ 
-                    "I do not have the authority to assist you with abolishing your crimes. however, I can still offer you a way "+
-                    "out of here on the condition that you provide me with your services as a bounty hunter";
+                    " I do not have the authority to assist you with abolishing your crimes. however, I can still offer you a way"+
+                    " out of here on the condition that you provide me with your services as a bounty hunter";
     button1.textContent = "Accept his offer";
     button1.onclick = loadAcceptedOfferScene;
     button2.textContent = "Decline his offer";
@@ -179,9 +181,11 @@ function loadAssignedBountyScene() {
                     " Once I get you out of here, you are to immedately begin tracking your assigned bounty and return to me with proof of kill."+
                     " Take this note, in it you will find further information about your bounty and the location of my hideout just outside of town."+
                     " Time is running short and the guards may arrive at any minute now so put the note aside for now and come with me.";
+    bountyLetter = true;
+    console.log(bountyLetter);
     button1.textContent = "Continue";
     button1.onclick = loadAcceptedOfferScene;
-    button2.textContent = "";
+    button2.textContent = "Read the letter now";
     button2.onclick = loadAcceptedOfferScene;
 
     document.body.innerHTML = "";
