@@ -35,8 +35,55 @@ function loadSecondScene() {
     p.classList = "text-style";
     button.classList ="button-style";
 
-    p.textContent = "You are a young aspiring bounty hunter in the land of Varhelle struggling to makes ends meet because of your lack of experience. Despite being adviced not to, you desperately accept a bounty to slay a deranged murderer who has been ravaging the nearby village";
+    p.textContent = "As you get closer you spot a mysterious hooded man gesturing for you to come closer...";
     button.textContent = "Continue";
+    button.addEventListener("click", loadThirdScene);
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(imgDiv);
+    div.appendChild(p);
+    div.appendChild(button);
+    
+}
+
+function loadThirdScene() {
+    const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
+    const p = document.createElement("p");
+    const button = document.createElement("button");
+
+    div.classList = "container";
+    imgDiv.classList = "imageSecondScene";
+    p.classList = "text-style";
+    button.classList ="button-style";
+
+    p.textContent = "Hooded man: Well met prisoner, I have heard about your sentencing and how you deem it to be unjust. I do not have the authority to assist you to abolish you for your crimes. however, I can still offer you a way out of here on the condition that you provide me with your services as a bounty hunter";
+    button.textContent = "Continue";
+    button.addEventListener("click", loadFourthScene);
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(imgDiv);
+    div.appendChild(p);
+    div.appendChild(button);
+    
+}
+
+function loadFourthScene() {
+    const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
+    const p = document.createElement("p");
+    const button = document.createElement("button");
+
+    div.classList = "container";
+    imgDiv.classList = "imageSecondScene";
+    p.classList = "text-style";
+    button.classList ="button-style";
+
+    p.textContent = "Hooded man: Well met prisoner, I have heard about your sentencing and how you deem it to be unjust. I do not have the authority to assist you to abolish you for your crimes. however, I can still offer you a way out of here on the condition that you provide me with your services as a bounty hunter";
+    button.textContent = "Continue";
+    button.addEventListener("click", loadFourthScene);
 
     document.body.innerHTML = "";
     document.body.append(div);
