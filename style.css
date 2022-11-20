@@ -29,7 +29,19 @@ body {
     justify-content: space-evenly;
 }
 
-
+.noteContainer {
+    background-image: url(./images/note.jpg);
+    color:rgb(212, 209, 209);
+    width: 68vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-left: 0.3rem solid rgba(224, 219, 219, 0.562);
+    border-right: 0.3rem solid rgba(224, 219, 219, 0.562);
+    align-items: center;
+    justify-content: space-between;
+}
 
 .button-style {
     background-color: rgb(22, 31, 34);
@@ -37,6 +49,19 @@ body {
     border-radius: 0.5rem;
     color: rgb(212, 209, 209);
     padding: 1rem;
+}
+
+.button-style-note {
+    background-color: rgb(22, 31, 34);
+    border: rgb(22, 31, 34);
+    border-radius: 0.5rem;
+    color: rgb(212, 209, 209);
+    padding: 1rem;
+}
+
+.button-style-note:hover {
+    background-color: rgba(0, 0, 0, 0.87);
+    cursor: pointer
 }
 
 .button-style:hover {
@@ -55,6 +80,13 @@ body {
     padding-right: 3rem;
 }
 
+.text-style-note {
+    color: rgb(49, 49, 41);
+    font-size: 1.9rem;
+    padding-left: 1.4rem;
+    padding-right: 1.3rem;
+}
+
 .text-style-end {
     font-size: 6rem;
 }
@@ -63,6 +95,12 @@ body {
     content: url(./images/hooded-character.jpg);
     border-radius: 1rem;
     flex: 0.6;
+}
+
+.imgGuardsArriving {
+    content: url(./images/arrested.png);
+    border-radius: 1rem;
+    flex: 0.4;
 }
 
 .speaker-name {

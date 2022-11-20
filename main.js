@@ -182,11 +182,10 @@ function loadAssignedBountyScene() {
                     " Take this note, in it you will find further information about your bounty and the location of my hideout just outside of town."+
                     " Time is running short and the guards may arrive at any minute now so put the note aside for now and come with me.";
     bountyLetter = true;
-    console.log(bountyLetter);
     button1.textContent = "Continue";
     button1.onclick = loadAcceptedOfferScene;
     button2.textContent = "Read the letter now";
-    button2.onclick = loadAcceptedOfferScene;
+    button2.onclick = loadNoteReadingScene;
 
     document.body.innerHTML = "";
     document.body.append(div);
@@ -197,43 +196,57 @@ function loadAssignedBountyScene() {
     div.appendChild(button2);
 }
 
-function loadWeaponChoiceScene() {
+function loadNoteReadingScene() {
     const div = document.createElement("div");
-    const imgDiv = document.createElement("div");
-    const speakerName = document.createElement("p");
     const p = document.createElement("p");
+    const p2 = document.createElement("p2");
     const button1 = document.createElement("button1");
-    const button2 = document.createElement("button2");
-    const button3 = document.createElement("button3");
-    const button4 = document.createElement("button4");
 
-    div.classList = "container";
-    imgDiv.classList = "imgHoodedStranger";
-    speakerName.classList = "speaker-name"
-    p.classList = "text-style";
-    button1.classList ="button-style";
-    button2.classList ="button-style";
-    button3.classList ="button-style";
-    button4.classList ="button-style";
+    div.classList = "noteContainer";
+    p.classList = "text-style-note";
+    p2.classList = "text-style-note"
+    button1.classList ="button-style-note";
 
-    speakerName.textContent = "Hooded stranger"
-    p.textContent = "";
-    button1.textContent = "Continue";
-    button1.onclick = loadAcceptedOfferScene;
-    button2.textContent = "Decline his offer";
-    button2.onclick = loadAcceptedOfferScene;
-    button3.textContent = "Continue";
-    button3.onclick = loadAcceptedOfferScene;
-    button4.textContent = "Decline his offer";
-    button4.onclick = loadAcceptedOfferScene;
+    p.textContent = "This bounty is for the ruthless murderer who goes by the name 'Romulus Evilian', he is known to lure his victims"+
+                    " in by pretending to be injured in the dark alleyways of town and when he has lured his victims away from the public,"+
+                    " he assaults them and brings them to his lair. The whereabouts of this lair is unknown but the townsfolk have claimed to have"+
+                    " spotted a man who was acting peculiar heading towards one of the abandoned houses at the edge of town that were evacuated"+
+                    " due to the the fires that struck the area a couple of months back.";
+    p2.textContent = "When you have completed the bounty you are to report back to me at my hideout in the southern outskirts of town."+
+                     " You will be able to identify my building by the raven figurines that are placed around the estate. Once you arrive"+
+                     " you have to knock five times, wait 10 seconds and then knock an additional 5 times for me know that it is you..."+
+                     "DESTROY THIS NOTE ONCE YOU HAVE READ IT";
+    button1.textContent = "Stop reading";
+    button1.onclick = loadAssignedBountyScene;
 
     document.body.innerHTML = "";
     document.body.append(div);
-    div.appendChild(imgDiv);
-    div.appendChild(speakerName);
+    div.appendChild(p);
+    div.appendChild(p2);
+    div.appendChild(button1);
+
+    setTimeout(guardsArriving, 4000);
+}
+
+function guardsArriving() {
+    const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
+    const p = document.createElement("p");
+    const button1 = document.createElement("button1");
+
+    div.classList = "container";
+    imgDiv.classList = "imgGuardsArriving";
+    p.classList = "text-style";
+    button1.classList ="button-style";
+
+    p.textContent = "You took too long and the guard apprehended the hooded stranger and threw him in the cell with you."+
+                    " Maybe you should have waited with reading the letter...";
+    button1.textContent = "Continue";
+    button1.onclick = loadEndingScene;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(imgDiv)
     div.appendChild(p);
     div.appendChild(button1);
-    div.appendChild(button2);
-    div.appendChild(button3);
-    div.appendChild(button4);
 }
