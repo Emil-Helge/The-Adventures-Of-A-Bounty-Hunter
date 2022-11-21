@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded", main);
 
 let username = "";
-let bountyLetter = false;
 
 function main() {
     loadIntroductionScene();
@@ -181,7 +180,6 @@ function loadAssignedBountyScene() {
                     " Take this note, in it you will find further information about your bounty and the location of my hideout just outside of town."+
                     " Time is running short and the guards may arrive at any minute now so put the note aside for now and come with me."+
                     "*the hooded stranger unlocks the cell and heads towards the exit*";
-    bountyLetter = true;
     button1.textContent = "Follow him";
     button1.onclick = loadCellIsUnlockedScene;
     button2.textContent = "Read the letter now";
@@ -263,7 +261,6 @@ function loadCellIsUnlockedScene() {
     button1.classList ="button-style";
 
     p.textContent = "The hooded stranger rushes through the prison corridor and just as he goes beyond the corner you hear a large thud...";
-    bountyLetter = true;
     button1.textContent = "Continue";
     button1.onclick = loadHoodedStrangerPassedOutScene;
 
@@ -287,9 +284,8 @@ function loadHoodedStrangerPassedOutScene() {
 
     p.textContent = "You rush around the corner to find the hooded stranger passed out on the ground. He must have slipped on something."+
                     " What do you do now?";
-    bountyLetter = true;
     button1.textContent = "Put on his cloak and continue your escape";
-    button1.onclick = loadHoodedStrangerPassedOutScene;
+    button1.onclick = loadEscapingOnYourOwnScene;
     button2.textContent = "Try to wake him up";
     button2.onclick = guardsArrivingInCorridor;
 
@@ -311,7 +307,7 @@ function guardsArrivingInCorridor() {
     p.classList = "text-style";
     button1.classList ="button-style";
 
-    p.textContent = "You fail to wake him up in time and the guards apprehend you and the hooded stranger and throw both of you back in your cell."
+    p.textContent = "You fail to wake him up in time and the guards apprehend you and the hooded stranger and throw both of you in your cell."
     button1.textContent = "Continue";
     button1.onclick = loadEndingScene;
 
@@ -319,5 +315,73 @@ function guardsArrivingInCorridor() {
     document.body.append(div);
     div.appendChild(imgDiv)
     div.appendChild(p);
+    div.appendChild(button1);
+}
+
+function loadEscapingOnYourOwnScene() {
+    const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
+    const p = document.createElement("p");
+    const button1 = document.createElement("button1");
+
+    div.classList = "container";
+    imgDiv.classList = "imgHoodedMainCharacter";
+    p.classList = "text-style";
+    button1.classList ="button-style";
+
+    p.textContent = "With a heavy conscience you grab the strangers cloak and put it on. Vowing to fulfill his bounty and return to free the man"+
+                    " who had helped you get this far once you have the appropriate tools at your disposal to stand a chance against the guards.";
+    button1.textContent = "Continue";
+    button1.onclick = loadSucessfullyEscapingScene;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(imgDiv);
+    div.appendChild(p);
+    div.appendChild(button1);
+}
+
+function loadSucessfullyEscapingScene() {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const button1 = document.createElement("button1");
+
+    div.classList = "NightSkyContainer";
+    p.classList = "text-style";
+    button1.classList ="button-style";
+
+    p.textContent = "Disguised as the hooded you manage to slip past the remaining guards and successfully escape the prison."+
+                    " Once you are outside you look up and admire the night sky and silently swear to yourself that you will fulfill your"+
+                    " task and return to free the man you just left behind. But for now it is time venture out and collect your bounty.";
+    button1.textContent = "Continue";
+    button1.onclick = loadToBeContinuedScene;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(p);
+    div.appendChild(button1);
+}
+
+function loadToBeContinuedScene() {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const p1 = document.createElement("p1");
+    const button1 = document.createElement("button1");
+
+    div.classList = "NightSkyContainer";
+    p.classList = "text-style-end";
+    p1.classList = "text-style";
+    button1.classList ="button-style";
+
+    p.textContent = "TO BE CONTINUED";
+    p1.textContent = "This is the end of the first chapter 'Prison Break'. Stay tuned for chapter two where "  + username + " "+
+                    "will continue their journey to collect the bounty for Romulus Evilian and liberate the hooded stranger...";
+    button1.textContent = "Play again?";
+    button1.onclick = loadIntroductionScene;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(p);
+    div.appendChild(p1);
     div.appendChild(button1);
 }

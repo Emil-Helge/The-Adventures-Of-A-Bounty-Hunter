@@ -57,6 +57,18 @@ body {
     gap: 1rem;
 }
 
+.NightSkyContainer {
+    background-image: url(./images/night-sky.jpg);
+    color: rgba(236, 229, 229, 0.808);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .button-style {
     background-color: rgb(22, 31, 34);
     border: rgb(22, 31, 34);
@@ -123,10 +135,10 @@ body {
     width: 60%;
 }
 
-.imgKnockedOut {
-    content: url(./images/knocked-out.png);
+.imgHoodedMainCharacter {
+    content: url(./images/hooded-main-character.jpg);
     border-radius: 1rem;
-    width: 60%;
+    flex: 0.6;
 }
 
 .speaker-name {
