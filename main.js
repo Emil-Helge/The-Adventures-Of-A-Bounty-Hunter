@@ -1,14 +1,18 @@
 window.addEventListener("DOMContentLoaded", main);
 
+/** Start of the program */
 function main() {
     loadIntroductionScene();
 }
 
+/** Creates the first introductory scene that is loaded upon starting the program,
+ *  gives the user the option to continue further
+ *  and removes all added content upon calling the next function */
 function loadIntroductionScene() {
     const div = document.createElement("div");
     const p = document.createElement("p");
     const button1 = document.createElement("button1");
-
+    
     div.classList = "container";
     p.classList = "text-style";
     button1.classList ="button-style";
@@ -24,6 +28,9 @@ function loadIntroductionScene() {
     div.appendChild(button1);
 }
 
+
+/** Creates the second introductory scene where the user gets to choose to continue and approach a mysterious man 
+ *  and removes all added content upon calling the next function*/
 function loadSecondIntroductionScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -46,6 +53,10 @@ function loadSecondIntroductionScene() {
     div.appendChild(button1);
 }
 
+
+/** Creates the scene that occurs if the user chooses to continue after getting closer to
+ *  the mysterious hooded man and gives the user a chance to accept or decline the offer from the man
+ *  and removes all added content upon calling the next function*/
 function loadHoodedStrangerEntranceScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -79,6 +90,10 @@ function loadHoodedStrangerEntranceScene() {
     div.appendChild(button2);   
 }
 
+
+/** Creates the scene that occurs if the user declines the offer
+ *  while giving the user the option to continue
+ *  and removes all added content upon calling the next function*/
 function loadDeclinedOfferScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -105,6 +120,10 @@ function loadDeclinedOfferScene() {
     div.appendChild(button1);   
 }
 
+
+/**  Creates the scene that occurs if the user has reached the end of the game
+ *   while giving the user the option to start over
+ *   and removes all added content upon calling the next function*/
 function loadEndingScene() {
     const div = document.createElement("div");
     const p = document.createElement("p");
@@ -124,6 +143,10 @@ function loadEndingScene() {
     div.appendChild(button1);
 }
 
+
+/** Creates the scene that occurs if the user acceps the offer
+ *  while giving the user the option to input their name before they continue
+ *  and removes all added content upon calling the next function*/
 function loadAcceptedOfferScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -157,6 +180,11 @@ function loadAcceptedOfferScene() {
     div.appendChild(button1);
 }
 
+
+/** Creates the scene that occurs if the user inputs their name and
+ *  is then greeted by the hooded stranger by the specified name while being given
+    the option to either follow the stranger or read the letter that is being given.
+ *  Removes all added content upon calling the next function */
 function loadAssignedBountyScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -192,16 +220,18 @@ function loadAssignedBountyScene() {
     div.appendChild(button2);
 }
 
+/** Creates the scene that occurs if the user chooses to read the letter
+ *  and presents the contents of the letter to the user while triggering
+ *  a timer set to four seconds to call a different function
+ *  and removes all added content upon calling the next function */
 function loadNoteReadingScene() {
     const div = document.createElement("div");
     const p = document.createElement("p");
     const p2 = document.createElement("p2");
-    const button1 = document.createElement("button1");
 
     div.classList = "noteContainer";
     p.classList = "text-style-note";
     p2.classList = "text-style-note"
-    button1.classList ="button-style-note";
 
     p.textContent = "This bounty is for the ruthless murderer who goes by the name 'Romulus Evilian', he is known to lure his victims"+
                     " in by pretending to be injured in the dark alleyways of town and when he has lured his victims away from the public,"+
@@ -212,18 +242,19 @@ function loadNoteReadingScene() {
                      " You will be able to identify my building by the raven figurines that are placed around the estate. Once you arrive"+
                      " you have to knock five times, wait 10 seconds and then knock an additional 5 times for me know that it is you..."+
                      "DESTROY THIS NOTE ONCE YOU HAVE READ IT";
-    button1.textContent = "Stop reading";
-    button1.onclick = loadAssignedBountyScene;
 
     document.body.innerHTML = "";
     document.body.append(div);
     div.appendChild(p);
     div.appendChild(p2);
-    div.appendChild(button1);
 
     setTimeout(guardsArrivingInCell, 4000);
 }
 
+
+/** Creates the scene that occurs when the timer has been triggered while giving the user
+ *  the option to continue after being informed about being apprehended by the guards.
+    Removes all added content upon calling the next function */
 function guardsArrivingInCell() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -247,6 +278,9 @@ function guardsArrivingInCell() {
     div.appendChild(button1);
 }
 
+/** Creates the scene that occurs if the user chooses to follow the hooded man
+ *  while giving the user the option to continue follow the hooded man through the prison corridors
+    and removes all added content upon calling the next function */
 function loadCellIsUnlockedScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -269,6 +303,9 @@ function loadCellIsUnlockedScene() {
     div.appendChild(button1);
 }
 
+/** Creates the scene that occurs if the user chooses to continue after following the hooded man
+ *  while giving the user the option to choose between taking the hooded mans cloak or trying to wake him up
+    and removes all added content upon calling the next function */
 function loadHoodedStrangerPassedOutScene() {
     const div = document.createElement("div");
     const p = document.createElement("p");
@@ -294,6 +331,10 @@ function loadHoodedStrangerPassedOutScene() {
     div.appendChild(button2);
 }
 
+
+/** Creates the scene that occurs if the user tries to wake up the hooded stranger
+ *  while giving the user the option to continue after being informed about having been apprehended by the guards.
+    and removes all added content upon calling the next function*/
 function guardsArrivingInCorridor() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -316,6 +357,9 @@ function guardsArrivingInCorridor() {
     div.appendChild(button1);
 }
 
+/** Creates the scene that occurs if the user chooses to put on the hooded strangers cloak and continue their escape
+ *  while giving the user the option to continue
+    and removes all added content upon calling the next function */
 function loadEscapingOnYourOwnScene() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
@@ -339,6 +383,9 @@ function loadEscapingOnYourOwnScene() {
     div.appendChild(button1);
 }
 
+/** Creates the scene that occurs if the user chooses to continue after they have put on the cloak
+ *  while giving the user the option to continue
+    and removes all added content upon calling the next function*/
 function loadSucessfullyEscapingScene() {
     const div = document.createElement("div");
     const p = document.createElement("p");
@@ -360,6 +407,9 @@ function loadSucessfullyEscapingScene() {
     div.appendChild(button1);
 }
 
+/** Creates the final scene of the first chapter for the story if the user chooses to continue after having escaped
+ *  while giving the user the option to start over
+    and removes all added content upon calling the next function */
 function loadToBeContinuedScene() {
     const div = document.createElement("div");
     const p = document.createElement("p");
