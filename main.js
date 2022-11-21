@@ -4,7 +4,6 @@ let username = "";
 let bountyLetter = false;
 
 function main() {
-    inventory = {}
     loadIntroductionScene();
 }
 
@@ -180,10 +179,11 @@ function loadAssignedBountyScene() {
     p.textContent = "Good to meet you" + " " + username + ". " + "Now that I know what to call you we can proceed with what I require of you."+
                     " Once I get you out of here, you are to immedately begin tracking your assigned bounty and return to me with proof of kill."+
                     " Take this note, in it you will find further information about your bounty and the location of my hideout just outside of town."+
-                    " Time is running short and the guards may arrive at any minute now so put the note aside for now and come with me.";
+                    " Time is running short and the guards may arrive at any minute now so put the note aside for now and come with me."+
+                    "*the hooded stranger unlocks the cell and heads towards the exit*";
     bountyLetter = true;
-    button1.textContent = "Continue";
-    button1.onclick = loadAcceptedOfferScene;
+    button1.textContent = "Follow him";
+    button1.onclick = loadCellIsUnlockedScene;
     button2.textContent = "Read the letter now";
     button2.onclick = loadNoteReadingScene;
 
@@ -225,10 +225,10 @@ function loadNoteReadingScene() {
     div.appendChild(p2);
     div.appendChild(button1);
 
-    setTimeout(guardsArriving, 4000);
+    setTimeout(guardsArrivingInCell, 4000);
 }
 
-function guardsArriving() {
+function guardsArrivingInCell() {
     const div = document.createElement("div");
     const imgDiv = document.createElement("div");
     const p = document.createElement("p");
@@ -241,6 +241,77 @@ function guardsArriving() {
 
     p.textContent = "You took too long and the guard apprehended the hooded stranger and threw him in the cell with you."+
                     " Maybe you should have waited with reading the letter...";
+    button1.textContent = "Continue";
+    button1.onclick = loadEndingScene;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(imgDiv)
+    div.appendChild(p);
+    div.appendChild(button1);
+}
+
+function loadCellIsUnlockedScene() {
+    const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
+    const p = document.createElement("p");
+    const button1 = document.createElement("button1");
+
+    div.classList = "container";
+    imgDiv.classList = "imgDungeon";
+    p.classList = "text-style";
+    button1.classList ="button-style";
+
+    p.textContent = "The hooded stranger rushes through the prison corridor and just as he goes beyond the corner you hear a large thud...";
+    bountyLetter = true;
+    button1.textContent = "Continue";
+    button1.onclick = loadHoodedStrangerPassedOutScene;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(imgDiv);
+    div.appendChild(p);
+    div.appendChild(button1);
+}
+
+function loadHoodedStrangerPassedOutScene() {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const button1 = document.createElement("button1");
+    const button2 = document.createElement("button2");
+
+    div.classList = "PassedOutContainer";
+    p.classList = "text-style";
+    button1.classList ="button-style";
+    button2.classList ="button-style";
+
+    p.textContent = "You rush around the corner to find the hooded stranger passed out on the ground. He must have slipped on something."+
+                    " What do you do now?";
+    bountyLetter = true;
+    button1.textContent = "Put on his cloak and continue your escape";
+    button1.onclick = loadHoodedStrangerPassedOutScene;
+    button2.textContent = "Try to wake him up";
+    button2.onclick = guardsArrivingInCorridor;
+
+    document.body.innerHTML = "";
+    document.body.append(div);
+    div.appendChild(p);
+    div.appendChild(button1);
+    div.appendChild(button2);
+}
+
+function guardsArrivingInCorridor() {
+    const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
+    const p = document.createElement("p");
+    const button1 = document.createElement("button1");
+
+    div.classList = "container";
+    imgDiv.classList = "imgGuardsArriving";
+    p.classList = "text-style";
+    button1.classList ="button-style";
+
+    p.textContent = "You fail to wake him up in time and the guards apprehend you and the hooded stranger and throw both of you back in your cell."
     button1.textContent = "Continue";
     button1.onclick = loadEndingScene;
 
