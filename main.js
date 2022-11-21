@@ -252,7 +252,7 @@ function loadNoteReadingScene() {
 }
 
 
-/** Creates the scene that occurs when the timer has been triggered while giving the user
+/** Creates the scene that occurs when the timer has ended while giving the user
  *  the option to continue after being informed about being apprehended by the guards.
     Removes all added content upon calling the next function */
 function guardsArrivingInCell() {
