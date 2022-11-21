@@ -1,7 +1,5 @@
 window.addEventListener("DOMContentLoaded", main);
 
-let username = "";
-
 function main() {
     loadIntroductionScene();
 }
@@ -350,7 +348,7 @@ function loadSucessfullyEscapingScene() {
     p.classList = "text-style";
     button1.classList ="button-style";
 
-    p.textContent = "Disguised as the hooded you manage to slip past the remaining guards and successfully escape the prison."+
+    p.textContent = "Disguised as the hooded stranger you manage to slip past the remaining guards and successfully escape the prison."+
                     " Once you are outside you look up and admire the night sky and silently swear to yourself that you will fulfill your"+
                     " task and return to free the man you just left behind. But for now it is time venture out and collect your bounty.";
     button1.textContent = "Continue";
@@ -375,7 +373,7 @@ function loadToBeContinuedScene() {
 
     p.textContent = "TO BE CONTINUED";
     p1.textContent = "This is the end of the first chapter 'Prison Break'. Stay tuned for chapter two where "  + username + " "+
-                    "will continue their journey to collect the bounty for Romulus Evilian and liberate the hooded stranger...";
+                    "will continue their journey to collect the bounty set out for Romulus Evilian and liberate the hooded stranger...";
     button1.textContent = "Play again?";
     button1.onclick = loadIntroductionScene;
 
