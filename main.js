@@ -179,7 +179,7 @@ function loadAssignedBountyScene() {
                     " Once I get you out of here, you are to immedately begin tracking your assigned bounty and return to me with proof of kill."+
                     " Take this note, in it you will find further information about your bounty and the location of my hideout just outside of town."+
                     " Time is running short and the guards may arrive at any minute now so put the note aside for now and come with me."+
-                    "*the hooded stranger unlocks the cell and heads towards the exit*";
+                    " *the hooded stranger unlocks the cell and heads towards the exit*";
     button1.textContent = "Follow him";
     button1.onclick = loadCellIsUnlockedScene;
     button2.textContent = "Read the letter now";
